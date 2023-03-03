@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Repair Shop</title>
-    <link href="{{ url('main.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('main.css') }}" rel="stylesheet" type="text/css" >
   </head>
   <body>
     <header>
@@ -12,9 +12,9 @@
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>
