@@ -25,4 +25,19 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/template', function() {
+    return view('template');
+});
+
+Route::get('/employees', function (){
+    return view('employees');
+});
+
+Route::get('/customers', function (){
+    return view('customers');
+});
+
+Route::get('/admin', function (){
+    return view('admin');
+});
 ?>
