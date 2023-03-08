@@ -40,4 +40,8 @@ Route::get('/customers', function (){
 Route::get('/admin', function (){
     return view('admin');
 });
+
+Route::get('/signup', function (){
+    return view('signup');
+});
 ?>
