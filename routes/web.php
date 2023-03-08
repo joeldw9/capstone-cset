@@ -44,4 +44,8 @@ Route::get('/admin', function (){
 Route::get('/signup', function (){
     return view('signup');
 });
+
+Route::get('payment', function (){
+    return view('payment');
+});
 ?>
