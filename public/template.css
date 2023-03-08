@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+}
+
+.topSection {
+    background-color: darkgray;
+    height: 150px;
+}
+
+
+.section1 {
+    background-color: white;
+    height: 1000px;
+}
+
+.bottomSection {
+    background-color:darkgoldenrod;
+    height: 200px;
+}
