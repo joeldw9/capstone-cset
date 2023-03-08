@@ -45,7 +45,4 @@ Route::get('/admin', function (){
 Route::get('/signup', function () {
     return view('signup');
 });
-
-
-
 ?>
