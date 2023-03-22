@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Repair Shop</title>
-    <link href="{{ url('main.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('main.css') }}" rel="stylesheet" type="text/css" >
   </head>
   <body>
     <header>
       <h1>Computer Repair Shop</h1>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>
@@ -22,7 +22,8 @@
       <section id="hero">
         <h2>We Fix Computers</h2>
         <p>Fast and affordable computer repair services.</p>
-        <a href="#" class="cta">Get a Free Quote</a>
+        <a href="#" class="cta">Create an Account and order a repair!</a>
+        <a href="#" class="cta">Already have an account? Log in here!</a>
       </section>
       <section id="services">
         <h2>Our Services</h2>

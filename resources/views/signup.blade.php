@@ -1,4 +1,6 @@
-        <!DOCTYPE html>
+<?php
+use App\Http\Controllers\signup;
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -11,15 +13,14 @@
       <h1>Computer Repair Shop</h1>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-        <form action="/signup" method="POST">
+        <form action="/api/signup" method="POST">
         <h3>Insert Username:</h3>
         <input name="username" type="username">
         <h3>Insert Password:</h3>
@@ -30,10 +31,9 @@
         <input name="email" type="email">
         <h3>Insert Role:</h3>
         <input name="role" type="role">
-        <input type=submit value="Create Account">
+        <input type=submit value="Create Account (Customer or Employee)">
         <input type=button value="Cancel" onclick=location.href='/'>
         </form>
-    </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>
     </footer>

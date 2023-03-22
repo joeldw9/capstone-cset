@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\signup;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,12 +38,12 @@ Route::get('/admin', function (){
     return view('admin');
 });
 
-Route::get('/signup', function (){
+Route::get('/signup', function () {
     return view('signup');
 });
 
-Route::get('payment', function (){
-    return view('payment');
+Route::get('/order', function () {
+    return view('order');
 });
 
 Route::get('review', function () {

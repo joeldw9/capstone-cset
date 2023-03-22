@@ -32,16 +32,37 @@ class signup extends Controller
             'username' => 'required',
             'password' => 'required',
             'email' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'confirmpassword' => 'required',
         ]);
-        if($submit['role']=="Customer"){
+        if($submit['role']=="Customer"&&$submit['password']==$submit['confirmpassword']){
             $ID = "CU" . random_int(100000, 999999);
             $username=$submit['username'];
             $password=$submit['password'];
             $email=$submit['email'];
-            $role=$submit['role'];
-            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $submit['role']]);
+            $role=1;
+            $approvalstatus='Approved';
+            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+            // DB::table('accounts')->insert([
+            //     'username'=>$submit['username'],
+            //     'password'=>$submit['password'],
+            //     'email'=>$submit['email'],
+            //     'ID'=>$ID,
+            //     'role'=>$role
+            // ]);
         }
+        else if($submit['role']=="Employee"&&$submit['password']==$submit['confirmpassword']){
+            $ID = "EM" . random_int(100000, 999999);
+            $username=$submit['username'];
+            $password=$submit['password'];
+            $email=$submit['email'];
+            $role=2;
+            $approvalstatus='Pending';
+            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+        }
+        return redirect('signup');
+        
+        return view('signup');
     }
 
     /**
