@@ -11,25 +11,9 @@
         var e = document.getElementById("servicePrice");
         var option = document.getElementById("serviceType");
         var value = option.value;
-        if (value == 0) {
-          e.innerHTML = "Please select an option for pricing."
-        }
-        if (value == 1) {
-          e.innerHTML = "Price: $49.99"
-        }
-        if (value == 2) {
-          e.innerHTML = "Price: $24.99"
-        }
-        if (value == 3) {
-          e.innerHTML = "Price: $74.99"
-        }
-        if (value == 4) {
-          e.innerHTML = "Price: $99.99"
-        }
+        var pricingArray = ["Please select an option to view pricing.", "Price: $49.99", "Price: $24.99", "Price: $74.99", "Price: $99.99"]
+        e.innerHTML = pricingArray[value];
       }
-      $(document).ready(function () {
-        pricingView();
-      });
     </script>
 
   </head>
@@ -59,7 +43,7 @@
             <option value="4">Data Recovery</option>
           </select></li>
           <br>
-          <p id="servicePrice"></p>
+          <p id="servicePrice">Please select an option to view pricing.</p>
           <br>
           <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;"></li>
         </ul>
