@@ -26,10 +26,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/template', function() {
-    return view('template');
-});
-
 Route::get('/employees', function (){
     return view('employees');
 });
