@@ -16,5 +16,7 @@ class employee extends Model
         'email',
         'ID',
         'role',
+        'confirmpassword',
+        'approvalstatus'
     ];
 }
