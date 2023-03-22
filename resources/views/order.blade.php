@@ -6,16 +6,7 @@
     <title>Computer Repair Shop</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" type="text/javascript"></script>
     <link href="{{ asset('main.css') }}" rel="stylesheet" type="text/css" >
-    <script>
-      function pricingView() {
-        var e = document.getElementById("servicePrice");
-        var option = document.getElementById("serviceType");
-        var value = option.value;
-        var pricingArray = ["Please select an option to view pricing.", "Price: $49.99", "Price: $24.99", "Price: $74.99", "Price: $99.99"]
-        e.innerHTML = pricingArray[value];
-      }
-    </script>
-
+    <script> function pricingView() { var pricingArray = ["Please select an option to view pricing.", "Price: $49.99", "Price: $24.99", "Price: $74.99", "Price: $99.99"]; document.getElementById("servicePrice").innerHTML = pricingArray[document.getElementById("serviceType").value;]; } </script>
   </head>
   <body>
     <header>
