@@ -25,10 +25,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/template', function() {
-    return view('template');
-});
-
 Route::get('/employees', function (){
     return view('employees');
 });
@@ -47,5 +43,9 @@ Route::get('/signup', function (){
 
 Route::get('payment', function (){
     return view('payment');
+});
+
+Route::get('review', function () {
+    return view('review');
 });
 ?>
