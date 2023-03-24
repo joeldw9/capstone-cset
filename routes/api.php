@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\signup;
+use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Event\Telemetry\System;
+use Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('signup', signup::class);
+Route::post('signup', function(Request $request) {
+    app('App\Http\Controllers\signup')->store($request);
+    return view("welcome");
+});
 
 ?>

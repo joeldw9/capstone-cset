@@ -43,13 +43,6 @@ class signup extends Controller
             $role=1;
             $approvalstatus='Approved';
             customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
-            // DB::table('accounts')->insert([
-            //     'username'=>$submit['username'],
-            //     'password'=>$submit['password'],
-            //     'email'=>$submit['email'],
-            //     'ID'=>$ID,
-            //     'role'=>$role
-            // ]);
         }
         else if($submit['role']=="Employee"&&$submit['password']==$submit['confirmpassword']){
             $ID = "EM" . random_int(100000, 999999);
