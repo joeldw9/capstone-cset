@@ -26,7 +26,7 @@ use App\Http\Controllers\signup;
         <h3>Insert Password:</h3>
         <input name="password" type="password">
         <h3>Confirm Password:</h3>
-        <input name="confirmpassword" type="confirmpassword">
+        <input name="confirmpassword" type="password">
         <h3>Insert Email:</h3>
         <input name="email" type="email">
         <h3>Insert Role:</h3>

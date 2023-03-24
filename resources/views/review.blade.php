@@ -20,6 +20,14 @@
                 </p>
                 <div class="squareRate"></div>
                 <p class="rateWords">Poor Excellent</p>
+                <div class="commentMain">
+                    <h4 class="commentR">Add your comment</h4>
+                    <form>
+                        <textarea class="comText" name="commentText" required></textarea><br>
+                        <input class="comButton" type="submit" value="Send Feedback">
+                    </form>
+                </div>
+
             </div>
         </section>
         <footer class="bottomSection">
