@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Repair Shop</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" type="text/javascript"></script>
     <link href="{{ asset('main.css') }}" rel="stylesheet" type="text/css" >
     <script> function pricingView() { var pricingArray = ["Please select an option to view pricing.", "Price: $49.99", "Price: $24.99", "Price: $74.99", "Price: $99.99"]; document.getElementById("servicePrice").innerHTML = pricingArray[document.getElementById("serviceType").value]; } </script>
   </head>
@@ -36,7 +35,7 @@
           <br>
           <p id="servicePrice">Please select an option to view pricing.</p>
           <br>
-          <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;"></li>
+          <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;" onclick="/"></li>
         </ul>
         </form>
       </section>
