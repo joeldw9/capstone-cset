@@ -1,3 +1,8 @@
+<?php
+    if(!isset($_SESSION)) {
+        session_start();
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +25,7 @@
     </header>
     <main>
         <p>This is admin login page</p>
+        <h1><?php echo $_SESSION["username"]; ?></h1>
     </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>

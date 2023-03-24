@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\loginlogout;
 use App\Http\Controllers\signup;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
@@ -28,5 +29,6 @@ Route::post('signup', function(Request $request) {
     app('App\Http\Controllers\signup')->store($request);
     return redirect("/");
 });
+Route::post('/login', [loginlogout::class,'Login'])
 
 ?>

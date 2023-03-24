@@ -1,3 +1,6 @@
+<?php
+use App\Http\Controllers\loginlogout;
+?>
 <html>
     <head>
         <title>Login</title>
@@ -8,14 +11,14 @@
             <h1 class="title">Login</h1>
         </header>
         <section class="section1">
-            <form class="form1">
+            <form class="form1" action="/api/login" method="POST">
                 <label for='username'>Username: </label>
-                <input type="text" id="user" name="user" autocomplete="off"><br><br>
+                <input type="text" id="username" name="username" autocomplete="off"><br><br>
                 <label for='password'>Password: </label>
-                <input type="password" id='pass' name="pass">
+                <input type="password" id='password' name="password">
 
-                <h1 class='enter'>Enter</h1>
-                <h1 class='back'>Back</h1>
+                <input type="submit" class='enter' name="login"></h1>
+                <input type=button class='enter' value="Cancel" onclick=location.href='/'>
             </form>
         </section>
         <footer class="bottomSection">
