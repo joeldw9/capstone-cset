@@ -30,7 +30,10 @@ use App\Http\Controllers\signup;
         <h3>Insert Email:</h3>
         <input name="email" type="email">
         <h3>Insert Role:</h3>
-        <input name="role" type="role">
+        <select name="role" type="role">
+          <option value="Customer">Customer</option>
+          <option value="Employee">Employee</option>
+        </select>
         <input type=submit value="Create Account (Customer or Employee)">
         <input type=button value="Cancel" onclick=location.href='/'>
         </form>
