@@ -51,4 +51,8 @@ Route::get('/order', function () {
 Route::get('review', function () {
     return view('review');
 });
+
+Route::get('status', function () {
+    return view('status');
+});
 ?>
