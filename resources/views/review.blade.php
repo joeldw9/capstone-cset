@@ -9,19 +9,18 @@
             <h2 class="reviewTitle">Help us improve by filling out the review information!</h2>
         </header>
         <section class="section1">
-            <form class="form1">
-                <h2 class="shipRate">Rate your shipping experience</h2>
-                <label>1</label>
-                <input type="radio" name="oneFive">
-                <label>2</label>
-                <input type="radio" name="twoFive">
-                <label>3</label>
-                <input type="radio" name="threeFive">
-                <label>4</label>
-                <input type="radio" name="fourFive">
-                <label>5</label>
-                <input type="radio" name="fiveFive">
-            </form>
+            <div class="rateCover">
+                <h2 class="rateTitle">Rate our shipping experience</h2>
+                <p class="starRating">
+                    <i class="my-star star1" data-star="1"></i>
+                    <i class="my-star star2" data-star="2"></i>
+                    <i class="my-star star3" data-star="3"></i>
+                    <i class="my-star star4" data-star="4"></i>
+                    <i class="my-star star5" data-star="5"></i>
+                </p>
+                <div class="squareRate"></div>
+                <p class="rateWords">Poor Excellent</p>
+            </div>
         </section>
         <footer class="bottomSection">
         </footer>
