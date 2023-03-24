@@ -10,7 +10,7 @@
 
 .section1 {
     background-color: white;
-    height: 1000px;
+    height: 600px;
 }
 
 .bottomSection {
@@ -27,9 +27,10 @@
 .rateCover {
     border: solid 5px black;
     width: 500px;
-    height: 300px;
-    margin-top: 5%;
-    margin-left: 5%;
+    height: 400px;
+    position: relative;
+    top: 10%;
+    margin: auto;
 }
 
 .rateTitle {
@@ -73,4 +74,24 @@
     word-spacing: 150px;
     margin-left: 27%;
     margin-top: -8%;
+}
+
+.commentMain {
+    text-align: center;
+    margin-top: 5%;
+    outline: none;
+}
+
+.comText {
+    font-size: 15px;
+    outline: none;
+}
+
+.comButton {
+    border-radius: 40px 40px;
+    padding: 20px;
+    margin-top: 15%;
+    font-size: 16px;
+    background-color: darkgoldenrod;
+    font-weight: bold;
 }
