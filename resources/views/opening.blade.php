@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="{{ url('open.css') }}" rel="stylesheet" type="text/css" >
+        <link href="{{ url('open.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header class="header1">
