@@ -24,7 +24,7 @@
       </nav>
     </header>
     <main>
-        <p>This is customer login page</p>
+        <p>This is customer home page</p>
         <h1><?php echo $_SESSION["username"]; ?></h1>
     </main>
     <footer>
