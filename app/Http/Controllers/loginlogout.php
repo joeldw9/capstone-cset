@@ -43,6 +43,9 @@ class loginlogout extends Controller
                         break;
                 }
         }
+        else{
+            return redirect('login');
+        }
     }
 }
 

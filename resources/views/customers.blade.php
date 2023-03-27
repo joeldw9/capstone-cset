@@ -1,7 +1,8 @@
 <?php
     if(!isset($_SESSION)) {
         session_start();
-    } 
+    }
+    use App\Http\Controllers\loginlogout; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,9 @@
     </header>
     <main>
         <p>This is customer home page</p>
+        <form class="form1" action="/api/logout" method="POST">
+          <input type="submit" class='enter' name="logout" value="Log Out"></h1>
+        </form>
         <table style="width:100%">
           <tr>
             <th>Order</th>

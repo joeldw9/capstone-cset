@@ -39,12 +39,12 @@ class signup extends Controller
         if($submit['role']=="Customer"&&$submit['password']==$submit['confirmpassword']){
             $ID = "CU" . random_int(100000, 999999);
             $username = $submit['username'];
-            $rules = array('username' => 'unique:accounts,username');
-            $usernameCheck['username'] = $username;
-            $validator = Validator::make($usernameCheck, $rules);
-            if ($validator->fails()) { 
-                return view('errorDuplicate');
-            } if ($validator == "a") {
+            // $rules = array('username' => 'unique:accounts,username');
+            // $usernameCheck['username'] = $username;
+            // $validator = Validator::make($usernameCheck, $rules);
+            // if ($validator->fails()) { 
+            //     return view('errorDuplicate');
+            // } if ($validator == "a") {
             $password=$submit['password'];
             $email=$submit['email'];
             $role=1;
@@ -52,7 +52,7 @@ class signup extends Controller
             customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
             return redirect('/');
         }
-    }
+    // }
         else if($submit['role']=="Employee"&&$submit['password']==$submit['confirmpassword']){
             $ID = "EM" . random_int(100000, 999999);
             $username=$submit['username'];
