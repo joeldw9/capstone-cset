@@ -14,7 +14,7 @@ class customer extends Model
         'username',
         'password',
         'email',
-        'ID',
+        'User_ID',
         'role',
         'confirmpassword',
         'approvalstatus',
