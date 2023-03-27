@@ -18,12 +18,12 @@ class loginlogout extends Controller
         ]);
 
         $users = DB::select("
-            SELECT username, email, password, ID, approvalstatus, role FROM accounts WHERE username=\"" . $_POST["username"] . "\" AND password=\"" . $_POST["password"] . "\"
+            SELECT username, email, password, User_ID, approvalstatus, role FROM accounts WHERE username=\"" . $_POST["username"] . "\" AND password=\"" . $_POST["password"] . "\"
         ");
 
         foreach($users as $user){
             if($user->username == $fields['username'] && $user->password == $fields['password'] && $user->approvalstatus == "Approved") {
-                $_SESSION['ID'] = $user->User_ID;
+                $_SESSION['ID'] = $user->user_id;
                 $_SESSION["username"] = $user->username;
                 $_SESSION["approvalstatus"] = $user->approvalstatus;
                 $_SESSION["role"] = $user->role;
