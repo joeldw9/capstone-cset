@@ -49,7 +49,7 @@ class signup extends Controller
             $email=$submit['email'];
             $role=1;
             $approvalstatus='Approved';
-            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
             return redirect('/');
         }
     }
@@ -60,7 +60,7 @@ class signup extends Controller
             $email=$submit['email'];
             $role=2;
             $approvalstatus='Pending';
-            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
         }
        /* return redirect('signup');
         
