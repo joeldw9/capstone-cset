@@ -25,7 +25,7 @@
       </nav>
     </header>
     <main>
-        <p>This is employee login page</p>
+        <p>This is employee home page</p>
         <h1><?php echo $_SESSION["username"]; ?></h1>
         <form class="form1" action="/api/logout" method="POST">
           <input type="submit" class='enter' name="logout" value="Log Out"></h1>
