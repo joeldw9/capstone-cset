@@ -5,6 +5,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +18,14 @@
   </head>
   <body>
     <header>
-      <h1>Computer Repair Shop</h1>
+      <section style="display: flex; justify-content: space-between">
+      <h1>Computer Repair Shop </h1>
+      <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
+      <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
+      <h3 style="margin-left: 50px;"><?php if ($_SESSION["role"] = 1){
+        echo "Customer";
+        }?></h3>
+      </section>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -25,7 +37,16 @@
     </header>
     <main>
         <p>This is customer home page</p>
-        <h1><?php echo $_SESSION["username"]; ?></h1>
+        <table style="width:100%">
+          <tr>
+            <th>Order</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </table>
     </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>
