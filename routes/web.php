@@ -52,12 +52,9 @@ Route::get('/review', function () {
     return view('review');
 });
 
-
-
 Route::get('/delete', function () {
     return view('delete');
 });
-
 
 Route::get('status', function () {
     return view('status');
