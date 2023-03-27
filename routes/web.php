@@ -48,7 +48,11 @@ Route::get('/order', function () {
     return view('order');
 });
 
-Route::get('review', function () {
+Route::get('/review', function () {
     return view('review');
+});
+
+Route::get('/errorDuplicate', function () {
+    return view('errorDuplicate');
 });
 ?>

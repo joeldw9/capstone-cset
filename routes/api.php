@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('signup', function(Request $request) {
     app('App\Http\Controllers\signup')->store($request);
-    return redirect("/");
+    return redirect('/');
 });
 Route::post('/login', [loginlogout::class,'Login'])
 
