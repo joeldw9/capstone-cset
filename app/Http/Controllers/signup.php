@@ -42,7 +42,6 @@ class signup extends Controller
             $rules = array('username' => 'unique:accounts,username');
             $usernameCheck['username'] = $username;
             $validator = Validator::make($usernameCheck, $rules);
-            echo($rules[0]);
             if ($validator->fails()) { 
                 return view('errorDuplicate');
             } if ($validator == "a") {
