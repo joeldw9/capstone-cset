@@ -7,6 +7,7 @@ use App\Models\admin;
 use App\Models\customer;
 use App\Models\employee;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 session_start();
 class signup extends Controller
 {
@@ -37,13 +38,22 @@ class signup extends Controller
         ]);
         if($submit['role']=="Customer"&&$submit['password']==$submit['confirmpassword']){
             $ID = "CU" . random_int(100000, 999999);
-            $username=$submit['username'];
+            $username = $submit['username'];
+            $rules = array('username' => 'unique:accounts,username');
+            $usernameCheck['username'] = $username;
+            $validator = Validator::make($usernameCheck, $rules);
+            echo($rules[0]);
+            if ($validator->fails()) { 
+                return view('errorDuplicate');
+            } if ($validator == "a") {
             $password=$submit['password'];
             $email=$submit['email'];
             $role=1;
             $approvalstatus='Approved';
             customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+            return redirect('/');
         }
+    }
         else if($submit['role']=="Employee"&&$submit['password']==$submit['confirmpassword']){
             $ID = "EM" . random_int(100000, 999999);
             $username=$submit['username'];
@@ -53,9 +63,9 @@ class signup extends Controller
             $approvalstatus='Pending';
             customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
         }
-        return redirect('signup');
+       /* return redirect('signup');
         
-        return view('signup');
+        return view('signup'); */
     }
 
     /**

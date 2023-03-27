@@ -17,6 +17,6 @@ class customer extends Model
         'ID',
         'role',
         'confirmpassword',
-        'approvalstatus'
+        'approvalstatus',
     ];
 }
