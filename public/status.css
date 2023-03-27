@@ -17,3 +17,46 @@
     background-color:darkgoldenrod;
     height: 200px;
 }
+
+.statusHead {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.statComplete {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.image1 {
+    width: 200px;
+    height: auto;
+}
+
+.image2 {
+    width: 200px;
+    height: auto;
+}
+
+.image3 {
+    width: 180px;
+    height: auto;
+}
+
+.title1 {
+    text-align: center;
+    position: relative;
+    top: 190px;
+    font-size: 40px;
+    word-spacing: 220px;
+    margin-top: -7%;
+}
+
+.allImage {
+    word-spacing: 200px;
+    text-align: center;
+    margin-top: 10%;
+}
