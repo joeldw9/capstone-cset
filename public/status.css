@@ -10,7 +10,7 @@
 
 .section1 {
     background-color: white;
-    height: 1000px;
+    height: 800px;
 }
 
 .bottomSection {
@@ -59,4 +59,50 @@
     word-spacing: 200px;
     text-align: center;
     margin-top: 10%;
+}
+
+.circle1 {
+    height: 50px;
+    width: 50px;
+    background-color: gold;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    right: 340px;
+}
+
+.circle2 {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle3 {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left: 350px;
+}
+
+.stepManage {
+    text-align: center;
+}
+
+.orderNow {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.regLine1 {
+    background-color: gray;
+    width: 800px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: -2%;
 }
