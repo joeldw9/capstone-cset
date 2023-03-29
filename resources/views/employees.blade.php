@@ -14,6 +14,7 @@
   </head>
   <body>
     <header>
+      <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a>
       <h1>Computer Repair Shop</h1>
       <nav>
         <ul>
