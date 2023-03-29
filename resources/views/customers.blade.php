@@ -21,6 +21,7 @@
     <header>
       <section style="display: flex; justify-content: space-between">
       <h1>Computer Repair Shop </h1>
+      <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a>
       <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
       <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
       <h3 style="margin-left: 50px;"><?php if ($_SESSION["role"] = 1){

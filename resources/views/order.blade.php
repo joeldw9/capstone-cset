@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Repair Shop</title>
     <link href="{{ asset('main.css') }}" rel="stylesheet" type="text/css" >
-    <script> function pricingView() { var pricingArray = ["Please select an option to view pricing.", "Price: $49.99", "Price: $24.99", "Price: $74.99", "Price: $99.99"]; document.getElementById("servicePrice").innerHTML = pricingArray[document.getElementById("serviceType").value]; } </script>
+    <script> function pricingView() { var pricingArray = ["Please select an option to view pricing.", "Price: $254.99", "Price: $149.99", "Price: $99.99", "Price: $599.99"]; document.getElementById("servicePrice").innerHTML = pricingArray[document.getElementById("serviceType").value]; } </script>
   </head>
   <body>
     <header>
+      <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a>
       <h1>Computer Repair Shop</h1>
       <nav>
         <ul>

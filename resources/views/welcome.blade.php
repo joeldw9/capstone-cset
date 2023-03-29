@@ -47,19 +47,19 @@
           <tbody>
             <tr>
               <td>Hardware Repair</td>
-              <td>$50+</td>
+              <td>$255+</td>
             </tr>
             <tr>
               <td>Virus Removal</td>
-              <td>$75+</td>
-            </tr>
-            <tr>
-              <td>Data Recovery</td>
               <td>$100+</td>
             </tr>
             <tr>
+              <td>Data Recovery</td>
+              <td>$600+</td>
+            </tr>
+            <tr>
               <td>Computer Tune-Up</td>
-              <td>$25+</td>
+              <td>$150+</td>
             </tr>
           </tbody>
         </table>
