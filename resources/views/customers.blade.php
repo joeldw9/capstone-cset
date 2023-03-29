@@ -51,6 +51,9 @@
             <th></th>
           </tr>
         </table>
+        <form action="/delete" method="GET">
+          <input type="submit" class='enter' value="Request Account Deletion">
+        </form>
     </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>
