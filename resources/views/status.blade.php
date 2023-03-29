@@ -19,9 +19,6 @@
                 <span class="circle2"></span>
                 <span class="circle3"></span>
             </div>
-            <div class="line1">
-                <span class="regLine1"></span>
-            </div>
             <div class=statsNow>
                 <h1 class="orderNow">Your order tracking status: </h1>
             </div>
