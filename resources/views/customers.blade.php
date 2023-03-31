@@ -21,7 +21,7 @@
     <header>
       <section style="display: flex; justify-content: space-between">
       <h1>Computer Repair Shop </h1>
-      <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a>
+      {{-- <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a> --}}
       <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
       <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
       <h3 style="margin-left: 50px;"><?php if ($_SESSION["role"] = 1){
@@ -39,6 +39,7 @@
     </header>
     <main>
         <p>This is customer home page</p>
+        <input type=button class='enter' value="Request Account Deletion" onclick=location.href='/delete'>
         <form class="form1" action="/api/logout" method="POST">
           <input type="submit" class='enter' name="logout" value="Log Out"></h1>
         </form>
@@ -52,9 +53,9 @@
             <th></th>
           </tr>
         </table>
-        <form action="/delete" method="GET">
+        {{-- <form action="/delete" method="GET">
           <input type="submit" class='enter' value="Request Account Deletion">
-        </form>
+        </form> --}}
     </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>

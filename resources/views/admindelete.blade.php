@@ -2,8 +2,7 @@
     if(!isset($_SESSION)) {
         session_start();
     }
-    use App\Http\Controllers\admin;
-    use App\Http\Controllers\loginlogout;
+    use App\Http\Controllers\editanddeletion;
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +14,7 @@
   </head>
   <body>
     <header>
-      {{-- <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a> --}}
+      <a href="/admin" style="position: absolute; font-weight: bold; color: red;">Back</a>
       <h1>Computer Repair Shop</h1>
       <nav>
         <ul>
@@ -27,7 +26,7 @@
       </nav>
     </header>
     <main>
-        <p>This is admin login page</p>
+        <p>This is the account deletion page</p>
         <h1><?php echo $_SESSION["username"]; ?></h1>
         <form class="form1" action="/api/logout" method="POST">
           <input type="submit" class='enter' name="logout" value="Log Out"></h1>
@@ -42,10 +41,10 @@
           echo "Role: Admin",'<br> <br>';
           }
           ?></h1>
-        <input type=button class='enter' value="Account Deletion Page" onclick=location.href='/admindelete'>
-        <h1>Employee Accounts Requesting Approval:</h1>
+
+        <h1>Customer Accounts Requesting Deletion:</h1>
         <h2><?php $users = DB::select("
-            SELECT * FROM accounts WHERE role = 2 AND approvalstatus = 'Pending'");
+            SELECT * FROM accounts WHERE role = 1 AND requestingdeletion = 'Yes'");
             foreach($users as $user){
             $_SESSION["username"] = $user->username;
             $_SESSION["email"] = $user->email;
@@ -55,10 +54,25 @@
             echo "ID: ",$_SESSION["ID"], '<br> <br>';
             }
             ?></h1>
-    <h3>Enter the Username of the employee into the box below to approve their account:</h3>
-    <form class="form1" action="/api/admin" method="POST">
+
+
+        <h1>Employee Accounts Requesting Deletion:</h1>
+        <h2><?php $users = DB::select("
+            SELECT * FROM accounts WHERE role = 2 AND requestingdeletion = 'Yes'");
+            foreach($users as $user){
+            $_SESSION["username"] = $user->username;
+            $_SESSION["email"] = $user->email;
+            $_SESSION["ID"] = $user->User_ID;
+            echo "Username: ",$_SESSION["username"], '<br>';
+            echo "E-Mail: ",$_SESSION["email"], '<br>';
+            echo "ID: ",$_SESSION["ID"], '<br> <br>';
+            }
+            ?></h1>
+
+    <h3>Enter the Username of the account into the box below you wish to delete:</h3>
+    <form class="form1" action="/api/deleteaccount" method="POST">
       <input type="text" id="username" name="username" autocomplete="off"><br><br>
-      <input type="submit" class='enter' name="approve"></h1>
+      <input type="submit" class='enter' name="deleteaccount"></h1>
     </form>
     </main>
     <footer>

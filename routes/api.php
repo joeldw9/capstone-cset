@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\loginlogout;
+use App\Http\Controllers\editanddeletion;
 use App\Http\Controllers\admin;
 use App\Http\Controllers\signup;
 use App\Http\Controllers\edit;
@@ -42,5 +43,7 @@ Route::post('/login', [loginlogout::class,'Login']);
 Route::post('/admin', [admin::class,'approve']);
 Route::post('/logout', [loginlogout::class,'userLogout']);
 Route::post('/edit', [edit::class,'alter']);
+Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);
+Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
 
 ?>

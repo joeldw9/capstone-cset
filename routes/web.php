@@ -72,4 +72,8 @@ Route::get('/errorDuplicate', function () {
     return view('errorDuplicate');
 });
 
+Route::get('/admindelete', function () {
+    return view('admindelete');
+});
+
 ?>

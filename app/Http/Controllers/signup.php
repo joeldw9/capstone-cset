@@ -43,7 +43,8 @@ class signup extends Controller
             $email=$submit['email'];
             $role=1;
             $approvalstatus='Approved';
-            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+            $requestingdeletion='No';
+            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus, 'requestingdeletion' => $requestingdeletion]);
             return redirect('/');
         }
     // }
@@ -54,7 +55,8 @@ class signup extends Controller
             $email=$submit['email'];
             $role=2;
             $approvalstatus='Pending';
-            employee::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus]);
+            $requestingdeletion='No';
+            customer::create(['username' => $submit['username'], 'password' => $submit['password'], 'email' => $submit['email'], 'User_ID' => $ID,'role' => $role, 'approvalstatus' => $approvalstatus, 'requestingdeletion' => $requestingdeletion]);
         }
     }
 

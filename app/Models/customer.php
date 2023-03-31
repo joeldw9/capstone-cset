@@ -18,5 +18,6 @@ class customer extends Model
         'User_ID',
         'role',
         'approvalstatus',
+        'requestingdeletion'
     ];
 }
