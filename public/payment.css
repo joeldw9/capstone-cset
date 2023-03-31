@@ -23,8 +23,8 @@
     border: 5px solid black;
     width: 500px;
     height: 400px;
-    margin-top: 5%;
-    margin-left: 10%;
+    /* margin-top: 5%;
+    margin-left: 10%; */
 }
 
 .section1 {
@@ -38,13 +38,13 @@
 }
 
 .form2 {
-    float: right;
+    /* float: right; */
     border: 5px solid black;
-    text-align: left;
+    /* text-align: left; */
     width: 500px;
     height: 180px;
-    margin-top: -24%;
-    margin-right: 10%;
+    /* margin-top: -24%;
+    margin-right: 10%; */
 }
 
 .cardSubmit {
@@ -63,4 +63,10 @@
     border-radius: 20px 20px;
     background-color: blue;
     color: white;
+}
+
+.wholeForm {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
 }
