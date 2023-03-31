@@ -10,13 +10,13 @@ class customer extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'accounts';
+    protected $primaryKey = 'User_ID';
     protected $fillable = [
         'username',
         'password',
         'email',
         'User_ID',
         'role',
-        'confirmpassword',
         'approvalstatus',
     ];
 }

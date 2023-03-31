@@ -23,8 +23,9 @@ class loginlogout extends Controller
 
         foreach($users as $user){
             if($user->username == $fields['username'] && $user->password == $fields['password'] && $user->approvalstatus == "Approved") {
-                $_SESSION['ID'] = $user->User_ID;
+                $_SESSION['User_ID'] = $user->User_ID;
                 $_SESSION["username"] = $user->username;
+                $_SESSION["password"] = $user->password;
                 $_SESSION["email"] = $user->email;
                 $_SESSION["approvalstatus"] = $user->approvalstatus;
                 $_SESSION["role"] = $user->role;

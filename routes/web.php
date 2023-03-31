@@ -60,6 +60,10 @@ Route::get('/status', function () {
     return view('status');
 });
 
+Route::get('/edit', function () {
+    return view('edit');
+});
+
 Route::get('/payment', function () {
     return view('payment');
 });
