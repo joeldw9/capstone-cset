@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    use App\Http\Controllers\loginlogout; 
+?>
 <html>
     <head>
         <link href="{{ url('payment.css') }}" rel="stylesheet" type="text/css" >
@@ -12,8 +18,7 @@
             <div class='wholeForm'>
                 <form class='form1'>
                     <h1 class="cardTitle">Card</h1><br><br>
-                    <label for="cardUser">Username: </label>
-                    <input type="text" name="cardUser"><br><br>
+                    <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
                     <input type="radio" name="card" value="Credit">Credit
                     <input type="radio" name="card" value="Debit">Debit<br><br><br>
                     <label for="cardNumber">Card Number: </label>
@@ -28,8 +33,7 @@
                 </form>
                 <form class="form2">
                     <h1 class="paypalTitle">Paypal</h1><br><br>
-                    <label for="payUser">Username: </label>
-                    <input type="text" name="user"><br><br><br>
+                    <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
                     <input class="paypalSubmit" type="submit" value="Continue to Checkout" name="submit">
                 </form>
             </div>
