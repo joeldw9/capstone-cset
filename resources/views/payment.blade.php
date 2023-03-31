@@ -11,6 +11,8 @@
             <h1 class='sectionTitle'>Fill out the payment form to continue</h1>
             <form class='form1'>
                 <h1 class="cardTitle">Card</h1><br><br>
+                <label for="cardUser">Username: </label>
+                <input type="text" name="cardUser"><br><br>
                 <input type="radio" name="card" value="Credit">Credit
                 <input type="radio" name="card" value="Debit">Debit<br><br><br>
                 <label for="cardNumber">Card Number: </label>
