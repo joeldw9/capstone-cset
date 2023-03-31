@@ -60,4 +60,8 @@ Route::get('status', function () {
     return view('status');
 });
 
+Route::get('/edit', function () {
+    return view('edit');
+});
+
 ?>

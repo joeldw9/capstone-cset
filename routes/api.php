@@ -3,6 +3,7 @@
 use App\Http\Controllers\loginlogout;
 use App\Http\Controllers\admin;
 use App\Http\Controllers\signup;
+use App\Http\Controllers\edit;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::post('signup', function(Request $request) {
 });
 Route::post('/login', [loginlogout::class,'Login']);
 Route::post('/admin', [admin::class,'approve']);
-Route::post('/logout', [loginlogout::class,'userLogout'])
+Route::post('/logout', [loginlogout::class,'userLogout']);
+Route::post('/edit', [edit::class,'alter']);
 
 ?>
