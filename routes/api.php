@@ -29,7 +29,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('signup', function(Request $request) {
     $username = count(DB::select('select username from accounts where username = \'' . $request->username . '\''));
-    if ($username > 0) {
+    $email = count(DB::select('select email from accounts where email = \'' . $request->email . '\''));
+    if ($username > 0 || $email > 0) {
         return redirect('/errorDuplicate');
     } else {
         app('App\Http\Controllers\signup')->store($request);
