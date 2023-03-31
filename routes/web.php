@@ -56,12 +56,16 @@ Route::get('/delete', function () {
     return view('delete');
 });
 
-Route::get('status', function () {
+Route::get('/status', function () {
     return view('status');
 });
 
-Route::get('payment', function () {
+Route::get('/payment', function () {
     return view('payment');
+});
+
+Route::get('/errorDuplicate', function () {
+    return view('errorDuplicate');
 });
 
 ?>

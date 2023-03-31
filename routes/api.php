@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Event\Telemetry\System;
 use Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('signup', function(Request $request) {
-    app('App\Http\Controllers\signup')->store($request);
-    return redirect('/');
+    $username = count(DB::select('select username from accounts where username = \'' . $request->username . '\''));
+    if ($username > 0) {
+        return redirect('/errorDuplicate');
+    } else {
+        app('App\Http\Controllers\signup')->store($request);
+        return redirect('/');
+    }
 });
 Route::post('/login', [loginlogout::class,'Login']);
 Route::post('/admin', [admin::class,'approve']);
