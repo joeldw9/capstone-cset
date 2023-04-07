@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Repair Shop</title>
     <link href="{{ asset('main.css') }}" rel="stylesheet" type="text/css" >
-    <script> function pricingView() { var pricingArray = ["Please select an option to view pricing.", "Price: $254.99", "Price: $149.99", "Price: $99.99", "Price: $599.99"]; document.getElementById("servicePrice").innerHTML = pricingArray[document.getElementById("serviceType").value]; } </script>
+    <script>
+    function pricingView() {$price = document.getElementById("serviceType").value; document.getElementById("servicePrice").innerHTML = "Price: $" + $price; document.getElementById("price").value = $price} </script>
   </head>
   <body>
     <header>
@@ -23,20 +24,21 @@
     <main>
       <section id="services">
         <h2>Order</h2>
-        <form class="orderForm">
+        <form class="orderForm" action="/api/order" method="POST">
         <ul style="margin-left: 25%; margin-right: 25%; width: 50%;">
           <li><textarea required placeholder="Please describe the device you need repaired, as well as your issue."></textarea></li>
           <li><select id="serviceType" required onchange="pricingView()">
             <option selected hidden value="0">Please Select One</option>
-            <option value="1">Physical Repair</option>
-            <option value="2">Tune-Up</option>
-            <option value="3">Virus Removal</option>
-            <option value="4">Data Recovery</option>
+            <option value="254.99">Physical Repair</option>
+            <option value="149.99">Tune-Up</option>
+            <option value="99.99">Virus Removal</option>
+            <option value="599.99">Data Recovery</option>
           </select></li>
+          <input type='hidden', value="", name="price", id="price">
           <br>
           <p id="servicePrice">Please select an option to view pricing.</p>
           <br>
-          <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;" onclick="/"></li>
+          <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;"></li>
         </ul>
         </form>
       </section>

@@ -45,5 +45,8 @@ Route::post('/logout', [loginlogout::class,'userLogout']);
 Route::post('/edit', [edit::class,'alter']);
 Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);
 Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
+Route::post('/order', function(Request $request) {
+    app('App\Http\Controllers\order')->order($request);
+});
 
 ?>
