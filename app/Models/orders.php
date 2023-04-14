@@ -15,5 +15,7 @@ class orders extends Model
         'Price',
         'User_ID',
         'Status',
+        'Description',
+        'Type'
     ];
 }

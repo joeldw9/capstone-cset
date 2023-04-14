@@ -34,8 +34,16 @@ class editanddeletion extends Controller
         $fields = $request->validate([
             'username' => 'required|string',
         ]);
+        $y = DB::select("SELECT User_ID from accounts where username = \"". $fields["username"] ."\"");
+        foreach($y as $z){
+        $x = DB::select("SELECT User_ID from orders where USER_ID = \"". $z->User_ID ."\"");
+        if(empty($x)){
         DB::delete("DELETE FROM accounts where username = \"" . $fields["username"] . "\"");
         return redirect('admin');
+        }
+        else{
+            return redirect('admin');
+        }}
     }
     
     public function index()
