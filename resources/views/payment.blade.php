@@ -16,7 +16,7 @@
         <section class="section1">
             <h1 class='sectionTitle'>Fill out the payment form to continue</h1>
             <div class='wholeForm'>
-                <form class='form1'>
+                <form class='form1' action="/status" method="POST">
                     <h1 class="cardTitle">Card</h1><br><br>
                     <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
                     <input type="radio" name="card" value="Credit" required>Credit
