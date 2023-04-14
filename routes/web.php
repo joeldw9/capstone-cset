@@ -76,4 +76,7 @@ Route::get('/admindelete', function () {
     return view('admindelete');
 });
 
+Route::get('/orderview', function () {
+    return view('orderview');
+});
 ?>
