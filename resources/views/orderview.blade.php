@@ -10,44 +10,29 @@
     </head>
     <body>
         <header class="topSection">
-            <h1 class="theTitle">Your Order</h1>
+            <h1 class="theTitle">Your Orders</h1>
+            <h2 class="theTitle">Copy the Order ID for payment</h2>
         </header>
         <section class="section1">
-            <?php
-            $hostName = "localhost";
-            $userName = "root";
-            $password = "";
-            $databaseName = "capstone_cset";
-                $conn = new mysqli($hostName, $userName, $password, $databaseName);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            include ("database.php");
-
-            $db = $conn;
-            $tableName = "orders";
-            $columns = ['Order_ID', 'User_ID', 'Description', 'Type', 'Price', 'Status'];
-            $fecthData = fetch_data($db, $tableName, $columns);
-
-            function fetch_data($db, $tableName, $columns){
-                if(empty($db)){
-                    $msg= "Database connection error";
+            <form action="/payment" method="GET">
+                <?php
+                $users = DB::select("
+                SELECT * FROM orders WHERE User_ID = '".$_SESSION["User_ID"]."'");
+                foreach($users as $user){
+                    $_SESSION["Order_ID"] = $user->Order_ID;
+                    $_SESSION["Type"] = $user->Type;
+                    $_SESSION["Description"] = $user->Description;
+                    $_SESSION["Status"] = $user->Status;
+                    $_SESSION["Price"] = $user->Price;
+                    echo "Order_ID: ",$_SESSION["Order_ID"],"<br>";
+                    echo "Type: ",$_SESSION["Type"], "<br>";
+                    echo "Description: ",$_SESSION["Description"], "<br>";
+                    echo "Status: ",$_SESSION["Status"],"<br>";
+                    echo "Price: ",$_SESSION["Price"],"<br>";
                 }
-                elseif(empty($columns) || !is_array($columns)){
-                    $msg="columns Name must be defined in an indexed array";
-                }
-                elseif(empty($tableName)) {
-                    $msg="Table name is empty";
-                }
-                else {
-                }
-
-                $columnName = implode(", ", $columns);
-                // $query = "SELECT ".$columnName." FROM $tableName"." ORDER BY Order_ID WHERE User_ID = $_SESSION['User_ID']"; // syntax error, unexpected string content "", expecting "-" or identifier or variable or number
-                $result = $db->query($query);
-            }
             ?>
+            <input type="submit" value="Pay here!">
+            </form>    
         </section>
         <footer class="bottomSection">
         </footer>
