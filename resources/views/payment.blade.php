@@ -28,12 +28,16 @@
                     <label for="cvc"> CVC: </label>
                     <input type="number" name="cvc" min="100" max="999" required><br><br>
                     <label for="zip"> Zip Code: </label>
-                    <input type="number" name="zipCode" required><br><br><br>
+                    <input type="number" name="zipCode" required><br><br>
+                    <label for="Order_ID">Order ID: </label>
+                    <input type="text" name="Order_ID" required><br><br><br>
                     <input class="cardSubmit" type="submit" value="Submit payment" name="submit">
                 </form>
                 <form class="form2">
                     <h1 class="paypalTitle">Paypal</h1><br><br>
                     <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
+                    <label for="Order_ID">Order ID: </label>
+                    <input type="text" name="Order_ID" required><br><br><br>
                     <input class="paypalSubmit" type="submit" value="Submit payment" name="submit">
                 </form>
             </div>
