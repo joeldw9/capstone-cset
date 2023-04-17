@@ -17,7 +17,8 @@
             <form action="/payment" method="GET">
                 <?php
                 $users = DB::select("
-                SELECT * FROM orders WHERE User_ID = '".$_SESSION["User_ID"]."'");
+                SELECT * FROM orders WHERE User_ID = '".$_SESSION["User_ID"]."'"
+            );
                 foreach($users as $user){
                     $_SESSION["Order_ID"] = $user->Order_ID;
                     $_SESSION["Type"] = $user->Type;

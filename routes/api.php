@@ -5,6 +5,7 @@ use App\Http\Controllers\editanddeletion;
 use App\Http\Controllers\admin;
 use App\Http\Controllers\signup;
 use App\Http\Controllers\edit;
+use App\Http\Controllers\payment;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -48,5 +49,6 @@ Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
 Route::post('/order', function(Request $request) {
     app('App\Http\Controllers\order')->order($request);
 });
-
+Route::post('/payment', [payment::class,'store']);
+//Figure out how to enter the payment info into database
 ?>

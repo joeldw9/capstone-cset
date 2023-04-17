@@ -3,6 +3,7 @@
         session_start();
     }
     use App\Http\Controllers\loginlogout; 
+    use App\Http\Controllers\payment;
 ?>
 <html>
     <head>
@@ -16,19 +17,23 @@
         <section class="section1">
             <h1 class='sectionTitle'>Fill out the payment form to continue</h1>
             <div class='wholeForm'>
-                <form class='form1' action="/status" method="POST">
+                <form class='form1' action="/api/payment" method="POST">
                     <h1 class="cardTitle">Card</h1><br><br>
                     <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
-                    <input type="radio" name="card" value="Credit" required>Credit
-                    <input type="radio" name="card" value="Debit" required>Debit<br><br><br>
-                    <label for="cardNumber">Card Number: </label>
-                    <input type="text" name="cardNum" required><br><br>
+                    <select name="payment_method">
+                        <option value="credit">credit</option>
+                        <option value="debit">debit</option>
+                    </select><br><br><br>
+                    {{-- <input type="radio" name="card" value="Credit" required>Credit
+                    <input type="radio" name="card" value="Debit" required>Debit<br><br><br> --}}
+                    <label for="card_number">Card Number: </label>
+                    <input type="text" name="card_number" required><br><br>
                     <label for="expireDate">Expiration Year: </label>
-                    <input type="number" name="expDate" min="1000" max="9999" required><br><br>
+                    <input type="number" name="exp_date" min="1000" max="9999" required><br><br>
                     <label for="cvc"> CVC: </label>
-                    <input type="number" name="cvc" min="100" max="999" required><br><br>
+                    <input type="number" name="CVC" min="100" max="999" required><br><br>
                     <label for="zip"> Zip Code: </label>
-                    <input type="number" name="zipCode" required><br><br>
+                    <input type="number" name="zip_code" required><br><br>
                     <label for="Order_ID">Order ID: </label>
                     <input type="text" name="Order_ID" required><br><br><br>
                     <input class="cardSubmit" type="submit" value="Submit payment" name="submit">
