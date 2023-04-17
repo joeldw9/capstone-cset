@@ -2,7 +2,8 @@
     if(!isset($_SESSION)) {
         session_start();
     }
-    use App\Http\Controllers\loginlogout; 
+    use App\Http\Controllers\loginlogout;
+    use App\Http\Controllers\employee; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,39 @@
           echo "Role: Employee",'<br> <br>';
           }
           ?></h1>
-
+          <h1>Your Orders:</h1>
+          <h2><?php 
+              $_SESSION["username"] = $user->username;
+              $users = DB::select("
+              SELECT * FROM orders WHERE Status = 'Approved' and Employee_ID = \"". $_SESSION["username"] ."\"");
+              foreach($users as $user){
+              $_SESSION["Description"] = $user->Description;
+              $_SESSION["User_ID"] = $user->User_ID;
+              $_SESSION["Order_ID"] = $user->Order_ID;
+              echo "Description: ",$_SESSION["Description"], '<br>';
+              echo "User_ID: ",$_SESSION["User_ID"], '<br>';
+              $x=$user->Price;
+              if($x==254.99&&$x!=149.99&&$x!=99.99&&$x!=599.99){
+                echo "Physical Repair", '<br>';
+              };
+              if($x==149.99&&$x!=254.99&&$x!=99.99&&$x!=599.99){
+                echo 'Tune-Up', '<br>';
+              };
+              if($x==99.99&&$x!=149.99&&$x!=254.99&&$x!=599.99){
+                echo 'Virus Removal', '<br>';
+              };
+              if($x==599.99&&$x!=149.99&&$x!=99.99&&$x!=254.99){
+                echo 'Data Recovery', '<br>';
+              };
+              echo "Order_ID: ",$_SESSION["Order_ID"], '<br> <br>';
+              }
+              ?></h1>
+          <h3>Enter the Order_ID of the order and the current status in their respective boxes to set status:</h3>
+          <form class="form1" action="/api/employee" method="POST">
+            <input type="text" id="Order_ID" name="Order_ID" autocomplete="off"><br><br>
+            <input type="text" id="status" name="status" autocomplete="off"><br><br>
+            <input type="submit" class='enter' name="approve"></h1>
+          </form>
     </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>

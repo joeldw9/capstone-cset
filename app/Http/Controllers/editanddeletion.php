@@ -38,8 +38,14 @@ class editanddeletion extends Controller
         foreach($y as $z){
         $x = DB::select("SELECT User_ID from orders where USER_ID = \"". $z->User_ID ."\"");
         if(empty($x)){
-        DB::delete("DELETE FROM accounts where username = \"" . $fields["username"] . "\"");
-        return redirect('admin');
+            $a = DB::select("SELECT Employee_ID from orders where Employee_ID = \"". $z->User_ID ."\"");
+            if(empty($a)){
+                DB::delete("DELETE FROM accounts where username = \"" . $fields["username"] . "\"");
+                return redirect('admin');        
+            }
+            else{
+                return redirect('admin');        
+            }
         }
         else{
             return redirect('admin');
