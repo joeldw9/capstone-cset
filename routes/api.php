@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\loginlogout;
+use App\Http\Controllers\employee;
 use App\Http\Controllers\editanddeletion;
 use App\Http\Controllers\admin;
 use App\Http\Controllers\signup;
@@ -41,6 +42,8 @@ Route::post('signup', function(Request $request) {
 });
 Route::post('/login', [loginlogout::class,'Login']);
 Route::post('/admin', [admin::class,'approve']);
+Route::post('/admin2', [admin::class,'assign']);
+Route::post('/employee', [employee::class,'setstatus']);
 Route::post('/logout', [loginlogout::class,'userLogout']);
 Route::post('/edit', [edit::class,'alter']);
 Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);

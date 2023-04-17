@@ -1,34 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 session_start();
-
-class admin extends Controller
+class employee extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function approve(Request $request){
-        $fields = $request->validate([
-            'username' => 'required|string',
-        ]);
-        DB::table('accounts')->where('username', $fields["username"])->update(['approvalstatus' => 'Approved']);
-        return redirect('admin');
-    }
 
-    public function assign(Request $request){
+    public function setstatus(Request $request){
         $fields = $request->validate([
-            'username' => 'required|string',
-            'Order_ID' => 'required|string'
+            'Order_ID' => 'required|string',
+            'status' => 'required|string'
         ]);
-        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Status' => 'Approved']);
-        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Employee_ID' => $fields["username"]]);
-        return redirect('admin');
+        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Status' => $fields["status"]]);
+        return redirect('employees');
     }
 
     public function index()
