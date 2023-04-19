@@ -35,9 +35,8 @@ class payment extends Controller
         $Order_ID = $submit['Order_ID'];
         $User_ID = $_SESSION['User_ID'];
         $payment = $submit['payment_method'];
-        $Price = DB::select("
-        SELECT Price FROM orders WHERE Order_ID = '".$Order_ID."'"
-        );
+        $Price = json_decode(json_encode(DB::select("
+        SELECT Price FROM orders WHERE Order_ID = '".$Order_ID."'")), true)[0]['Price'];
         // $Price = $submit['Price'];
         $card = $submit['card_number'];
         $exp_date = $submit['exp_date'];

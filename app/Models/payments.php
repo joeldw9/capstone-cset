@@ -9,6 +9,9 @@ class payments extends Model
 {
     use HasFactory;
     public $timestamp = false;
+    public $updated_at = false;
+    public $created_at = false;
+    protected $table = 'payments';
     protected $fillable = [
         'Order_ID',
         'User_ID',
