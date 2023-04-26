@@ -33,7 +33,6 @@ class Order extends Controller
         $description = $request->input('description');
         $ID = "CU" . random_int(100000, 999999);
         orders::create(['Status' => 'Ordered', 'User_ID' => $_SESSION['User_ID'], 'Order_ID' => $ID, 'Price' => $price, 'Description' => $description, 'Type' => $type]);
-        return redirect('/customers');
     }
 }
 

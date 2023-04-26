@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\signup;
 use App\Http\Controllers\loginlogout;
-
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +64,9 @@ Route::get('/edit', function () {
     return view('edit');
 });
 
-Route::get('/payment', function () {
+Route::get('/payment', function (Request $request) {
+    $Price = $request.old('Price');
+    $Order_ID = $request.old('Order_ID');
     return view('payment');
 });
 

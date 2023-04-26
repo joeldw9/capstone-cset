@@ -9,6 +9,7 @@ use App\Http\Controllers\edit;
 use App\Http\Controllers\payment;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
+use Request as requestPayment;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Event\Telemetry\System;
 use Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider;
@@ -49,8 +50,11 @@ Route::post('/logout', [loginlogout::class,'userLogout']);
 Route::post('/edit', [edit::class,'alter']);
 Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);
 Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
-Route::post('/order', function(Request $request) {
+Route::post('/order', function (Request $request) {
     app('App\Http\Controllers\order')->order($request);
+    $price = $request::only('Price');
+    $Order_ID = $request::only('Order_ID');
+    return redirect('userresults')->withInput();
 });
 Route::post('/payment', [payment::class,'store']);
 //Figure out how to enter the payment info into database
