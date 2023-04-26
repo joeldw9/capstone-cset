@@ -79,4 +79,8 @@ Route::get('/admindelete', function () {
 Route::get('/orderview', function () {
     return view('orderview');
 });
+
+Route::get('/paypal', function () {
+    return view('paypal');
+});
 ?>

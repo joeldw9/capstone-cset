@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+}
+
+.topSection {
+    background-color: lightskyblue;
+    height: 150px;
+}
+
+.mainTitle {
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    top: 40px;
+}
+
+
+.section1 {
+    background-color: white;
+    height: 550px;
+}
+
+.form1 {
+    border: 5px solid black;
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.formPaypal {
+    font-size: 25px;
+    text-decoration: underline;
+    text-align: center;
+    padding: 20px;
+}
+
+.cardType {
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.bottomSection {
+    background-color:darkgoldenrod;
+    height: 200px;
+}
+
+label, input {
+    margin-left: 5%;
+}
+
+.cardSubmit {
+    padding: 10px;
+    border-radius: 20px 20px;
+    position: relative;
+    left: 120px;
+    background-color: skyblue;
+}
