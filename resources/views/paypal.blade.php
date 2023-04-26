@@ -15,7 +15,7 @@
             <h1 class="mainTitle">Paypal</h1>
         </header>
         <section class="section1">
-            <form class="form1">
+            <form class="form1" action="/api/paypal" method="POST">
                 <h1 class="formPaypal">Paypal Information</h1><br><br>
                 <p class="cardType">Card Type: </p>
                 <select name="payment_method">
@@ -30,8 +30,6 @@
                 <input type="number" name="CVC" min="100" max="999" required><br><br>
                 <label for="zip"> Zip Code: </label>
                 <input type="number" name="zip_code" required><br><br>
-                <label for="Order_ID">Order ID: </label>
-                <input type="text" name="Order_ID" required><br><br><br>
                 <input class="cardSubmit" type="submit" value="Submit payment" name="submit">
             </form>
         </section>

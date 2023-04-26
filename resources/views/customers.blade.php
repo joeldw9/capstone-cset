@@ -44,7 +44,7 @@
         <form class="form1" action="/orderview" method="GET">
           <input type="submit" class='enter' value="View Orders">
         </form>
-        <form action="">
+        <form action="/paypal" method="GET">
           <input type="submit" class='enter' value="Link your Paypal">
         </form>
         <input type=button class='enter' value="Request Account Deletion" onclick=location.href='/delete'>

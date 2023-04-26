@@ -11,7 +11,7 @@ class paypal extends Model
     public $timestamp = false;
     public $updated_at = false;
     public $created_at = false;
-    protected $table = 'payments';
+    protected $table = 'paypal';
     protected $fillable = [
         'User_ID',
         'card_number',
