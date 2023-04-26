@@ -29,33 +29,28 @@
         }?></h3>
       </section>
       <nav>
-        <ul>
+        {{-- <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/#pricing">Pricing</a></li>
           <li><a href="/#contact">Contact Us</a></li>
-        </ul>
+        </ul> --}}
       </nav>
     </header>
     <main>
-        <p>This is customer home page</p>
+        <form class="form1" action="/order" method="GET">
+          <input type="submit" class='enter' value="Make an Order">
+        </form>
+        <form class="form1" action="/orderview" method="GET">
+          <input type="submit" class='enter' value="View Orders">
+        </form>
+        <form action="">
+          <input type="submit" class='enter' value="Link your Paypal">
+        </form>
         <input type=button class='enter' value="Request Account Deletion" onclick=location.href='/delete'>
         <form class="form1" action="/api/logout" method="POST">
           <input type="submit" class='enter' name="logout" value="Log Out"></h1>
         </form>
-        <table style="width:100%">
-          <tr>
-            <th>Order</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <th></th>
-            <th></th>
-          </tr>
-        </table>
-        {{-- <form action="/delete" method="GET">
-          <input type="submit" class='enter' value="Request Account Deletion">
-        </form> --}}
     </main>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>
