@@ -55,4 +55,14 @@ label, input {
     position: relative;
     left: 120px;
     background-color: skyblue;
+    border-style: double;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.cardSubmit:hover {
+    background-color: blueviolet;
+    color: white;
+    transition: 2s;
 }
