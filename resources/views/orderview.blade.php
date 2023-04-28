@@ -10,14 +10,16 @@
     </head>
     <body>
         <header class="topSection">
+            <a href="/customers" style="position: absolute; font-weight: bold; color: red;">Back</a>
             <h1 class="theTitle">Your Orders</h1>
             <h2 class="theTitle">Copy the Order ID for payment</h2>
         </header>
+        
         <section class="section1">
             <form action="/payment" method="GET">
                 <?php
                 $users = DB::select("
-                SELECT * FROM orders WHERE User_ID = '".$_SESSION["User_ID"]."'"
+                SELECT * FROM orders WHERE User_ID = '".$_SESSION["User_ID"]."' AND status = 'Ordered'"
             );
                 foreach($users as $user){
                     $_SESSION["Order_ID"] = $user->Order_ID;

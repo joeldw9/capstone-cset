@@ -15,30 +15,21 @@
   <body>
     <header>
       <a href="/admin" style="position: absolute; font-weight: bold; color: red;">Back</a>
-      <h1>Computer Repair Shop</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
-        </ul>
-      </nav>
+      <section style="display: flex; justify-content: space-between">
+        <h1>Computer Repair Shop</h1>
+        <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
+        <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
+        <h3 style="margin-left: 50px;"><?php if ($_SESSION["role"] = 2){
+          echo "Admin";
+          }?></h3>
+        </section>
     </header>
     <main>
-        <p>This is the account deletion page</p>
-        <h1><?php echo $_SESSION["username"]; ?></h1>
-        <form class="form1" action="/api/logout" method="POST">
-          <input type="submit" class='enter' name="logout" value="Log Out"></h1>
-        </form>
         <h2><?php $users = DB::select("
           SELECT * FROM accounts WHERE role = 3");
           foreach($users as $user){
           $_SESSION["username"] = $user->username;
           $_SESSION["email"] = $user->email;
-          echo "Username: ",$_SESSION["username"], '<br>';
-          echo "E-Mail: ",$_SESSION["email"], '<br>';
-          echo "Role: Admin",'<br> <br>';
           }
           ?></h1>
 

@@ -17,14 +17,6 @@
     <header>
       <a href="/customers" style="position: absolute; font-weight: bold; color: red;">Back</a>
       <h1>Computer Repair Shop</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
-        </ul>
-      </nav>
     </header>
     <main>
       <section id="services">

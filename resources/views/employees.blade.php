@@ -16,18 +16,16 @@
   <body>
     <header>
       {{-- <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a> --}}
+      <section style="display: flex; justify-content: space-between">
       <h1>Computer Repair Shop</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
-        </ul>
-      </nav>
+      <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
+      <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
+      <h3 style="margin-left: 50px;"><?php if ($_SESSION["role"] = 2){
+        echo "Employee";
+        }?></h3>
+      </section>
     </header>
     <main>
-        <p>This is employee home page</p>
         <h1><?php echo $_SESSION["username"]; ?></h1>
         <input type=button class='enter' value="Edit Your Account" onclick=location.href='/edit'>
         <input type=button class='enter' value="Request Account Deletion" onclick=location.href='/delete'>
@@ -39,9 +37,6 @@
           foreach($users as $user){
           $_SESSION["username"] = $user->username;
           $_SESSION["email"] = $user->email;
-          echo "Username: ",$_SESSION["username"], '<br>';
-          echo "E-Mail: ",$_SESSION["email"], '<br>';
-          echo "Role: Employee",'<br> <br>';
           }
           ?></h1>
           <h1>Your Orders:</h1>
