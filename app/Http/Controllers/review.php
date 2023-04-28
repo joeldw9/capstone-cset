@@ -30,7 +30,7 @@ class review extends Controller
                 }
             }
         }
-
+        return view('/customers');
     } 
 
     public function index()
