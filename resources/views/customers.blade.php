@@ -38,6 +38,7 @@
       </nav>
     </header>
     <main>
+      <p>This is customer home page</p>
         <form class="form1" action="/order" method="GET">
           <input type="submit" class='enter' value="Make an Order">
         </form>
@@ -47,6 +48,7 @@
         <form action="/paypal" method="GET">
           <input type="submit" class='enter' value="Link your Paypal">
         </form>
+        <input type=button class='enter' value="Edit Your Account" onclick=location.href='/edit'>
         <input type=button class='enter' value="Request Account Deletion" onclick=location.href='/delete'>
         <form class="form1" action="/api/logout" method="POST">
           <input type="submit" class='enter' name="logout" value="Log Out"></h1>

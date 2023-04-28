@@ -29,6 +29,7 @@
     <main>
         <p>This is employee home page</p>
         <h1><?php echo $_SESSION["username"]; ?></h1>
+        <input type=button class='enter' value="Edit Your Account" onclick=location.href='/edit'>
         <input type=button class='enter' value="Request Account Deletion" onclick=location.href='/delete'>
         <form class="form1" action="/api/logout" method="POST">
           <input type="submit" class='enter' name="logout" value="Log Out"></h1>
