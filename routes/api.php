@@ -4,6 +4,7 @@ use App\Http\Controllers\loginlogout;
 use App\Http\Controllers\employee;
 use App\Http\Controllers\editanddeletion;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\review;
 use App\Http\Controllers\signup;
 use App\Http\Controllers\edit;
 use App\Http\Controllers\payment;
@@ -50,6 +51,7 @@ Route::post('/logout', [loginlogout::class,'userLogout']);
 Route::post('/edit', [edit::class,'alter']);
 Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);
 Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
+Route::post('/review', [review::class,'review']);
 Route::post('/order', function(Request $request) {
     app('App\Http\Controllers\order')->order($request);
 });

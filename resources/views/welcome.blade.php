@@ -24,6 +24,7 @@
         <p>Fast and affordable computer repair services.</p>
         <a href="/signup" class="cta">Create an Account and order a repair!</a>
         <a href="/login" class="cta">Already have an account? Log in here!</a>
+        <a href="/seereview" class="cta">Check out reviews for our service!</a>
       </section>
       <section id="services">
         <h2>Our Services</h2>

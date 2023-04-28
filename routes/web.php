@@ -83,4 +83,8 @@ Route::get('/orderview', function () {
 Route::get('/paypal', function () {
     return view('paypal');
 });
+
+Route::get('/seereview', function () {
+    return view('seereview');
+});
 ?>
