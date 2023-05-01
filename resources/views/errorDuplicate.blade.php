@@ -14,7 +14,6 @@
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>
