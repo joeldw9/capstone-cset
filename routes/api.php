@@ -9,6 +9,7 @@ use App\Http\Controllers\signup;
 use App\Http\Controllers\edit;
 use App\Http\Controllers\payment;
 use App\Http\Controllers\paypal_con;
+use App\Http\Controllers\Order;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -52,9 +53,7 @@ Route::post('/edit', [edit::class,'alter']);
 Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);
 Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
 Route::post('/review', [review::class,'review']);
-Route::post('/order', function(Request $request) {
-    app('App\Http\Controllers\order')->order($request);
-});
+Route::post('/order', [Order::class, 'order'] );
 Route::post('/payment', [payment::class,'store']);
 Route::post('/paypal', [paypal_con::class,'store']);
 Route::post('/paypal_payment', [payment::class,'pal_store']);
