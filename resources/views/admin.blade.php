@@ -4,6 +4,15 @@
     }
     use App\Http\Controllers\admin;
     use App\Http\Controllers\loginlogout;
+    $hostname = "localhost";
+    $username = 'root';
+    $password = "";
+    $databaseName = "capstone_cset";
+    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+    $query = "SELECT * FROM accounts where role = 2 and approvalstatus = 'Approved'";
+    $orderquery = "SELECT * FROM orders WHERE Status = 'Ordered'";
+    $result1=mysqli_query($connect, $query);
+    $result2=mysqli_query($connect, $orderquery)
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,34 +21,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Repair Shop</title>
     <link href="{{ url('main.css') }}" rel="stylesheet" type="text/css" >
+    <script>
+      function userchange() {
+    
+      $user = document.getElementById("ausername").value; document.getElementById("eusername").value = $user; 
+      console.log(document.getElementById("eusername").value)
+    
+      } 
+      function orderchange() {
+        
+        $order = document.getElementById("aOrder_ID").value; document.getElementById("Order_ID").value = $order;
+        console.log(document.getElementById("Order_ID").value)
+
+      } 
+      </script>
   </head>
   <body>
     <header>
       {{-- <a href="/login" style="position: absolute; font-weight: bold; color: red;">Back</a> --}}
-      <h1>Computer Repair Shop</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
-        </ul>
-      </nav>
+      <section style="display: flex; justify-content: space-between">
+        <h1>Computer Repair Shop</h1>
+        <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
+        <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
+        <h3 style="margin-left: 50px;"><?php if ($_SESSION["role"] = 2){
+          echo "Admin";
+          }?></h3>
+        </section>
     </header>
     <main>
-        <p>This is admin login page</p>
-        <h1><?php echo $_SESSION["username"]; ?></h1>
-        <form class="form1" action="/api/logout" method="POST">
-          <input type="submit" class='enter' name="logout" value="Log Out"></h1>
-        </form>
         <h2><?php $users = DB::select("
           SELECT * FROM accounts WHERE role = 3");
           foreach($users as $user){
           $_SESSION["username"] = $user->username;
           $_SESSION["email"] = $user->email;
-          echo "Username: ",$_SESSION["username"], '<br>';
-          echo "E-Mail: ",$_SESSION["email"], '<br>';
-          echo "Role: Admin",'<br> <br>';
           }
           ?></h1>
         <input type=button class='enter' value="Account Deletion Page" onclick=location.href='/admindelete'>
@@ -87,9 +101,29 @@
                 ?></h1>
             <h3>Enter the Username of the employee and the Order_ID in their respective boxes to assign an order:</h3>
             <form class="form1" action="/api/admin2" method="POST">
-              <input type="text" id="username" name="username" autocomplete="off"><br><br>
-              <input type="text" id="Order_ID" name="Order_ID" autocomplete="off"><br><br>
+              <select id="ausername" required onchange="userchange()">
+                <option selected hidden value="0">Please select an employee</option>
+                <?php while($row1 = mysqli_fetch_array($result1)):;?>
+    
+                <option value="<?php echo $row1[0];?>"><?php echo $row1[0];?></option>
+    
+                <?php endwhile;?>
+            </select>
+            <select id="aOrder_ID" required onchange="orderchange()">
+              <option selected hidden value="0">Please select an Order</option>
+              <?php while($row1 = mysqli_fetch_array($result2)):;?>
+  
+              <option value="<?php echo $row1[0];?>"><?php echo $row1[0];?></option>
+
+              <?php endwhile;?>
+
+          </select>
+              <input type='hidden' value="", name="eusername", id="eusername"><br><br>
+              <input type='hidden' value="", name="Order_ID", id="Order_ID"><br><br>
               <input type="submit" class='enter' name="approve"></h1>
+            </form>
+            <form class="form1" action="/api/logout" method="POST">
+              <input type="submit" class='enter' name="logout" value="Log Out"></h1>
             </form>
     </main>
     <footer>

@@ -4,9 +4,12 @@ use App\Http\Controllers\loginlogout;
 use App\Http\Controllers\employee;
 use App\Http\Controllers\editanddeletion;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\review;
 use App\Http\Controllers\signup;
 use App\Http\Controllers\edit;
 use App\Http\Controllers\payment;
+use App\Http\Controllers\paypal_con;
+use App\Http\Controllers\Order;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
 use Request as requestPayment;
@@ -50,12 +53,10 @@ Route::post('/logout', [loginlogout::class,'userLogout']);
 Route::post('/edit', [edit::class,'alter']);
 Route::post('/deletionrequest', [editanddeletion::class,'deletionrequest']);
 Route::post('/deleteaccount', [editanddeletion::class,'deleteaccount']);
-Route::post('/order', function (Request $request) {
-    app('App\Http\Controllers\order')->order($request);
-    $price = $request::only('Price');
-    $Order_ID = $request::only('Order_ID');
-    return redirect('userresults')->withInput();
-});
+Route::post('/review', [review::class,'review']);
+Route::post('/order', [Order::class, 'order'] );
 Route::post('/payment', [payment::class,'store']);
+Route::post('/paypal', [paypal_con::class,'store']);
+Route::post('/paypal_payment', [payment::class,'pal_store']);
 //Figure out how to enter the payment info into database
 ?>

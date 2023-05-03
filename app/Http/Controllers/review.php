@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\reviews;
 session_start();
-class employee extends Controller
+class review extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,13 +14,24 @@ class employee extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function setstatus(Request $request){
+    public function review(Request $request){
         $fields = $request->validate([
+            'username' => 'required|string',
             'Order_ID' => 'required|string',
+            'Review' => 'required|string',
+            'Rating' => 'required|string',
         ]);
-        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Status' => 'Finished']);
-        return redirect('employees');
-    }
+        if($fields["username"]==$_SESSION["username"]){
+            $x = DB::select("SELECT Order_ID from orders where User_ID = \"". $_SESSION["User_ID"] ."\" AND Status = 'Finished'");
+            if(!empty($x)){
+                $y = DB::select("SELECT Order_ID from review where Order_ID = \"". $fields["Order_ID"] ."\"");
+                if(empty($y)){
+                    reviews::create(['username' => $fields['username'], 'Order_ID' => $fields['Order_ID'], 'Review' => $fields['Review'], 'Rating' => $fields['Rating']]);    
+                }
+            }
+        }
+        return view('/customers');
+    } 
 
     public function index()
     {

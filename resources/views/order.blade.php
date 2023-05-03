@@ -17,14 +17,6 @@
     <header>
       <a href="/customers" style="position: absolute; font-weight: bold; color: red;">Back</a>
       <h1>Computer Repair Shop</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
-        </ul>
-      </nav>
     </header>
     <main>
       <section id="services">
@@ -43,7 +35,6 @@
           <input type='hidden', value="", name="type", id="type">
           <br>
           <p id="servicePrice">Please select an option to view pricing.</p>
-          <p id="serviceType2">Please select an option to view type.</p>
           <br>
           <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;"></li>
         </ul>

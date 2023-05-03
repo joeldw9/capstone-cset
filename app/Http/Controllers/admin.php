@@ -22,12 +22,10 @@ class admin extends Controller
     }
 
     public function assign(Request $request){
-        $fields = $request->validate([
-            'username' => 'required|string',
-            'Order_ID' => 'required|string'
-        ]);
-        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Status' => 'Approved']);
-        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Employee_ID' => $fields["username"]]);
+        $username = $request->input('eusername');
+        $Order_ID = $request->input('Order_ID');
+        DB::table('orders')->where('Order_ID', $Order_ID)->update(['Status' => 'Approved']);
+        DB::table('orders')->where('Order_ID', $Order_ID)->update(['Employee_ID' => $username]);
         return redirect('admin');
     }
 

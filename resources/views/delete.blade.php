@@ -10,16 +10,8 @@
     </head>
     <body>
         <header class="topSection">
+            <button onclick="history.back()" style="position: absolute; font-weight: bold; color: red;">Back</button><br>
             <h2>Fill out the form to request account deletion</h2>
-            <h3 style="margin-left: 300px;"><?php echo $_SESSION["username"]; ?></h3>
-      <h3 style="margin-left: 50px;"><?php echo $_SESSION["email"]; ?></h3>
-      <h3 style="margin-left: 50px;"><?php if($_SESSION["role"]==1){
-        echo "Customer";
-      }
-      else if($_SESSION["role"]==2){
-        echo "Employee";
-      }
-        ?></h3>
         </header>
         <section class="section1">
             <form action="/api/deletionrequest" method="POST">

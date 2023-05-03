@@ -16,7 +16,6 @@ use App\Http\Controllers\signup;
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/#pricing">Pricing</a></li>
-          <li><a href="/#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>
@@ -30,7 +29,7 @@ use App\Http\Controllers\signup;
         <h3>Insert Email:</h3>
         <input name="email" type="email">
         <input type=submit value="Edit Account">
-        <input type=button value="Cancel" onclick=location.href='/'>
+        <input type=button value="Cancel" onclick='history.back()'>
         </form>
     <footer>
       <p>&copy; 2023 Computer Repair Shop. All rights reserved.</p>

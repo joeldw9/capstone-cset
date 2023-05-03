@@ -38,7 +38,7 @@
                     <input type="text" name="Order_ID" required><br><br><br>
                     <input class="cardSubmit" type="submit" value="Submit payment" name="submit">
                 </form>
-                <form class="form2">
+                <form class="form2" action="/api/paypal_payment" method="POST">
                     <h1 class="paypalTitle">Paypal</h1><br><br>
                     <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
                     <label for="Order_ID">Order ID: </label>
