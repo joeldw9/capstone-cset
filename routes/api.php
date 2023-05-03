@@ -10,6 +10,7 @@ use App\Http\Controllers\edit;
 use App\Http\Controllers\payment;
 use App\Http\Controllers\paypal_con;
 use App\Http\Controllers\Order;
+use App\Http\Controllers\welcome;
 use App\Models\signup as ModelsSignup;
 use Illuminate\Http\Request;
 use Request as requestPayment;
@@ -58,5 +59,6 @@ Route::post('/order', [Order::class, 'order'] );
 Route::post('/payment', [payment::class,'store']);
 Route::post('/paypal', [paypal_con::class,'store']);
 Route::post('/paypal_payment', [payment::class,'pal_store']);
+Route::post('/makeadmin', [welcome::class,'makeadmin']);
 //Figure out how to enter the payment info into database
 ?>
