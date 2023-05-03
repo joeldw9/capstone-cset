@@ -26,7 +26,7 @@
                     echo"</br>";
                     echo "Review: ",$user->Review;
                     echo"</br>";
-                    echo "Rating: ",$user->Rating,"/5";
+                    echo "Rating: ",$user->Rating,"/5",'<br> <br>';
                 }
             ?>
         </section>

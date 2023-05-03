@@ -35,7 +35,6 @@
           <input type='hidden', value="", name="type", id="type">
           <br>
           <p id="servicePrice">Please select an option to view pricing.</p>
-          <p id="serviceType2">Please select an option to view type.</p>
           <br>
           <li><input type="submit" style="width: 50%; margin-left: 25%; margin-right: 25%;"></li>
         </ul>

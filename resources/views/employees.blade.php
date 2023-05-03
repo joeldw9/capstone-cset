@@ -66,10 +66,9 @@
               echo "Order_ID: ",$_SESSION["Order_ID"], '<br> <br>';
               }
               ?></h1>
-          <h3>Enter the Order_ID of the order and the current status in their respective boxes to set status:</h3>
+          <h3>Enter the Order_ID of the order and press Submit to set status to Finished:</h3>
           <form class="form1" action="/api/employee" method="POST">
             <input type="text" id="Order_ID" name="Order_ID" autocomplete="off"><br><br>
-            <input type="text" id="status" name="status" autocomplete="off"><br><br>
             <input type="submit" class='enter' name="approve"></h1>
           </form>
     </main>

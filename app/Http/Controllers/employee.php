@@ -15,9 +15,8 @@ class employee extends Controller
     public function setstatus(Request $request){
         $fields = $request->validate([
             'Order_ID' => 'required|string',
-            'status' => 'required|string'
         ]);
-        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Status' => $fields["status"]]);
+        DB::table('orders')->where('Order_ID', $fields["Order_ID"])->update(['Status' => 'Finished']);
         return redirect('employees');
     }
 
