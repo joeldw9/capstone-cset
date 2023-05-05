@@ -24,3 +24,10 @@
     top: 50px;
     font-size: 40px;
 }
+
+.container {
+    margin-top: 20px;
+    column-width: 500px;
+    orphans: 42;
+    font-weight: bold;
+}
