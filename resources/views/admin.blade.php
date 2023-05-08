@@ -122,6 +122,16 @@
               <input type='hidden' value="", name="Order_ID", id="Order_ID"><br><br>
               <input type="submit" class='enter' name="approve"></h1>
             </form>
+            <br>
+            <br>
+            <h3>Enter the Order ID of the order you wish to cancel:</h3>
+            <form class="form1" action="/api/cancel" method="POST">
+              <input type="text" id="Order_IDcancel" name="Order_IDcancel" autocomplete="off"><br><br>
+              <input type="submit" class='enter' name="cancel"></h1>
+            </form>
+            <br>
+            <br>
+            <br>
             <form class="form1" action="/api/logout" method="POST">
               <input type="submit" class='enter' name="logout" value="Log Out"></h1>
             </form>

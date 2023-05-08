@@ -21,6 +21,14 @@ class admin extends Controller
         return redirect('admin');
     }
 
+    public function cancel(Request $request){
+        $fields = $request->validate([
+            'Order_IDcancel' => 'required|string',
+        ]);
+        DB::table('orders')->where('Order_ID', $fields["Order_IDcancel"])->delete();
+        return redirect('admin');
+    }
+
     public function assign(Request $request){
         $username = $request->input('eusername');
         $Order_ID = $request->input('Order_ID');
@@ -28,6 +36,8 @@ class admin extends Controller
         DB::table('orders')->where('Order_ID', $Order_ID)->update(['Employee_ID' => $username]);
         return redirect('admin');
     }
+
+
 
     public function index()
     {

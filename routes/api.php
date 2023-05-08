@@ -48,6 +48,7 @@ Route::post('signup', function(Request $request) {
 });
 Route::post('/login', [loginlogout::class,'Login']);
 Route::post('/admin', [admin::class,'approve']);
+Route::post('/cancel', [admin::class,'cancel']);
 Route::post('/admin2', [admin::class,'assign']);
 Route::post('/employee', [employee::class,'setstatus']);
 Route::post('/logout', [loginlogout::class,'userLogout']);

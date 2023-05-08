@@ -29,8 +29,11 @@ class Order extends Controller
         else if($price==599.99){
             $type='Data Recovery';
         }
-
+        else{
+            return redirect('order');
+        }
         orders::create(['Status' => 'Ordered', 'User_ID' => $_SESSION['User_ID'], 'Order_ID' => $ID, 'Price' => $price, 'Description' => $description, 'Type' => $type]);
+        return redirect('order');
     }
 }
 

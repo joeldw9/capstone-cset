@@ -35,6 +35,7 @@ class editanddeletion extends Controller
             'username' => 'required|string',
         ]);
         $y = DB::select("SELECT User_ID from accounts where username = \"". $fields["username"] ."\"");
+        if(!empty($y)){
         foreach($y as $z){
         $x = DB::select("SELECT User_ID from orders where USER_ID = \"". $z->User_ID ."\"");
         if(empty($x)){
@@ -49,7 +50,10 @@ class editanddeletion extends Controller
         }
         else{
             return redirect('admin');
-        }}
+        }}}
+        else{
+            return redirect('admindelete'); 
+        }
     }
     
     public function index()
