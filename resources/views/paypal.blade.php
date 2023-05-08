@@ -12,6 +12,7 @@
     </head>
     <body>
         <header class="topSection">
+            <a href="/customers" style="position: absolute; font-weight: bold; color: red; font-size: 30px; background-color: black; text-decoration: none; padding: 5px;">Back</a>
             <h1 class="mainTitle">Paypal</h1>
         </header>
         <section class="section1">

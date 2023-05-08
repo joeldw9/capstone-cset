@@ -10,7 +10,7 @@
     </head>
     <body>
         <header class="topSection">
-            <a href="/customers" style="position: absolute; font-weight: bold; color: red;">Back</a>
+            <a href="/customers" style="position: absolute; font-weight: bold; color: red; font-size: 30px; background-color: black; text-decoration: none; padding: 5px;">Back</a>
             <h1 class="theTitle">Your Orders</h1>
             <h2 class="theTitle">Copy the Order ID for payment</h2>
         </header>
