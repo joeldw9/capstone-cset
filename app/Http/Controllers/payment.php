@@ -32,15 +32,11 @@ class payment extends Controller
             'zip_code' => 'required',
             'Order_ID' => 'required',
         ]);
-        $Order_ID = $request.old('Order_ID');
+        $Order_ID = $submit['Order_ID'];
         $User_ID = $_SESSION['User_ID'];
         $payment = $submit['payment_method'];
-<<<<<<< HEAD
-        $Price = $request.old('Price');
-=======
         $Price = json_decode(json_encode(DB::select("
         SELECT Price FROM orders WHERE Order_ID = '".$Order_ID."'")), true)[0]['Price'];
->>>>>>> main
         // $Price = $submit['Price'];
         $card = $submit['card_number'];
         $exp_date = $submit['exp_date'];
