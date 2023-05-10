@@ -33,6 +33,7 @@
                 <input type="number" name="zip_code" required><br><br>
                 <input class="cardSubmit" type="submit" value="Submit payment" name="submit">
             </form>
+                <img style="width: 200px; height: 100px; z-index: 1; position: relative; left: 45%; top: -25%;"src="images/paypal.png" alt="Paypal Logo">
         </section>
         <footer class="bottomSection">
         </footer>
