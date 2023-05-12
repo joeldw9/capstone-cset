@@ -3,7 +3,8 @@
 }
 
 .topSection {
-    background-color: darkgray;
+    background-color: orange;
+    border-bottom: solid 4px black;
     height: 150px;
 }
 
@@ -16,7 +17,7 @@
 
 
 .section1 {
-    background-color: white;
+    background-color: lightskyblue;
     height: 500px;
 }
 
