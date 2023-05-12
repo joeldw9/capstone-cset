@@ -13,6 +13,10 @@
         <header class="topSection">
             <a href="/order" style="position: absolute; font-weight: bold; color: red; text-decoration: none; font-size: 30px; background-color: black; padding: 10px;">Back</a>
             <h1 class="payTitle">Payment Page</h1>
+            <div>
+                <img style="height: 75px; width: 75px; margin-left: 30%; border-radius: 50%;" src="images/payment.jpg">
+                <img style="height: 75px; width: 75px; margin-left: 30%; border-radius: 50%;" src="images/payment.jpg">
+            </div>
         </header>
         <section class="section1">
             <h1 class='sectionTitle'>Fill out the payment form to continue</h1>
@@ -43,9 +47,11 @@
                     <h3>Username: <h3 style="color: red; position: relative;"> <?php echo $_SESSION["username"]; ?></h3></h3><br><br>
                     <label for="Order_ID">Order ID: </label>
                     <input type="text" name="Order_ID" required><br><br><br>
-                    <input class="paypalSubmit" type="submit" value="Submit payment" name="submit">
+                    <input class="paypalSubmit" type="submit" value="Submit payment" name="submit"><br><br>
+                    <img style="width: 200px; height: 100px; margin-left: 30%;" src="images/paypal.png">
                 </form>
             </div>
+            <img style="width: 300px; height: 75px; position: relative; left: 350px; bottom: 100px;" src="images/cards.png">
         </section>
         <footer class="bottomSection">
         </footer>
