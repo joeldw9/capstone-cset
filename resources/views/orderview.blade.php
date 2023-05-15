@@ -12,9 +12,9 @@
         <header class="topSection">
             <a href="/customers" style="position: absolute; font-weight: bold; color: red; font-size: 30px; background-color: black; text-decoration: none; padding: 5px;">Back</a>
             <h1 class="theTitle">Your Orders</h1>
-            <h2 class="theTitle">Copy the Order ID for payment</h2>
+            <h3 class="theTitle2">Copy the Order ID for payment</h3>
         </header>
-        
+    
         <section class="section1">
             <form class="container" action="/payment" method="GET">
                 <?php
@@ -34,7 +34,7 @@
                     echo "Price: ",$_SESSION["Price"],"<br><br>";
                 }
             ?>
-            <input type="submit" value="Pay here!">
+            <input class="button1" type="submit" value="Pay here!">
             </form>    
         </section>
         <footer class="bottomSection">

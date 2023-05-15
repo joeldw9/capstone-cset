@@ -9,8 +9,9 @@
 
 
 .section1 {
-    background-color: white;
-    height: 1000px;
+    background-image: linear-gradient(to bottom right, white, saddlebrown);
+    height: 900px;
+    padding: 10px;
 }
 
 .bottomSection {
@@ -23,6 +24,15 @@
     position: relative;
     top: 50px;
     font-size: 40px;
+    font-family: Arial;
+}
+
+.theTitle2 {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    font-size: 30px;
+    font-family: Arial;
 }
 
 .container {
@@ -30,4 +40,23 @@
     column-width: 500px;
     orphans: 42;
     font-weight: bold;
+    font-family: Arial;
+}
+
+.button1 {
+    padding: 10px;
+    border: solid 3px black;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 40px 40px;
+    font-size: 20px;
+    width: 150px;
+    transition: 0.5s;
+}
+
+.button1:hover {
+    transition: 1s;
+    background-color: yellowgreen;
+    color: black;
 }

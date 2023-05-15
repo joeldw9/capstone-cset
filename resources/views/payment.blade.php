@@ -11,7 +11,7 @@
     </head>
     <body>
         <header class="topSection">
-            <a href="/order" style="position: absolute; font-weight: bold; color: red; text-decoration: none; font-size: 30px; background-color: black; padding: 10px;">Back</a>
+            <a href="/orderview" style="position: absolute; font-weight: bold; color: red; text-decoration: none; font-size: 30px; background-color: black; padding: 10px;">Back</a>
             <h1 class="payTitle">Payment Page</h1>
             <div>
                 <img style="height: 75px; width: 75px; margin-left: 30%; border-radius: 50%;" src="images/payment.jpg">
