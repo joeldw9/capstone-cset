@@ -3,14 +3,14 @@
 }
 
 .topSection {
-    background-color: darkgray;
+    background-image: url("images/stars.jpg");
     height: 150px;
 }
 
 
 .section1 {
-    background-color: white;
-    height: 600px;
+    background-image: linear-gradient(to bottom right, gray, gold);
+    height: 650px;
 }
 
 .bottomSection {
@@ -22,12 +22,13 @@
     text-align: center;
     position: relative;
     top: 50px;
+    color: white;
 }
 
 .rateCover {
-    border: solid 5px black;
+    border: double 15px black;
     width: 500px;
-    height: 400px;
+    height: 500px;
     position: relative;
     top: 10%;
     margin: auto;
@@ -90,8 +91,16 @@
 .comButton {
     border-radius: 40px 40px;
     padding: 20px;
-    margin-top: 15%;
+    margin-top: 12%;
     font-size: 16px;
     background-color: darkgoldenrod;
     font-weight: bold;
+    border: 3px solid black;
+    transition: 0.5s;
+}
+
+.comButton:hover {
+    background-color: lightgreen;
+    transition: 1s;
+    cursor: pointer;
 }

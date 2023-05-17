@@ -11,7 +11,7 @@
     </head>
     <body>
         <header class="topSection">
-            <a href="/orderview" style="position: absolute; font-weight: bold; color: red; text-decoration: none; font-size: 30px; background-color: black; padding: 10px;">Back</a>
+            <a href="/orderview" style="position: absolute; font-weight: bold; color: red; text-decoration: none; font-size: 30px; background-color: white; padding: 10px;">Back</a>
             <h1 class="payTitle">Payment Page</h1>
             <div>
                 <img style="height: 75px; width: 75px; margin-left: 30%; border-radius: 50%;" src="images/payment.jpg">
@@ -39,8 +39,9 @@
                     <label for="zip"> Zip Code: </label>
                     <input type="number" name="zip_code" required><br><br>
                     <label for="Order_ID">Order ID: </label>
-                    <input type="text" name="Order_ID" required><br><br><br>
+                    <input type="text" name="Order_ID" required><br>
                     <input class="cardSubmit" type="submit" value="Submit payment" name="submit">
+                    <img style="width: 300px; height: 75px; position: relative; top: 125px; right: 25px;" src="images/cards.png">
                 </form>
                 <form class="form2" action="/api/paypal_payment" method="POST">
                     <h1 class="paypalTitle">Paypal</h1><br><br>
@@ -51,7 +52,6 @@
                     <img style="width: 200px; height: 100px; margin-left: 30%;" src="images/paypal.png">
                 </form>
             </div>
-            <img style="width: 300px; height: 75px; position: relative; left: 350px; bottom: 100px;" src="images/cards.png">
         </section>
         <footer class="bottomSection">
         </footer>

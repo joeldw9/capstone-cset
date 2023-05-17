@@ -51,7 +51,7 @@ $result2=mysqli_query($connect, $orderquery)
     </head>
     <body>
         <header class="topSection">
-            <button onclick="history.back()" style="position: absolute; font-weight: bold; color: red; font-size: 30px; background-color: black;">Back</button><br>
+            <button onclick="history.back()" style="position: absolute; font-weight: bold; color: red; font-size: 30px; background-color: gray;">Back</button><br>
             <h2 style="font-size: 30px;" class="reviewTitle">Help us improve by filling out the review information!</h2>
         </header>
         <section class="section1">
